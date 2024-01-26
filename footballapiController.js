@@ -815,7 +815,7 @@ const matchPlayerScorePointGenerate = async function (req, res) {
             total_point += goalConcdPOints
           }
           /* clean sheet pending */
-
+if(obj.statistics.minutes_played >=6) {
           if ((team_a_name === plr.team_key && parseInt(team_b_score) === 0) || (team_b_name === plr.team_key && parseInt(team_a_score) === 0)) {
             let cleanPoint = 0
             if (plr.player_role === 'MID' && match_format_data.clean_sheet_midfielder_bonus) {
